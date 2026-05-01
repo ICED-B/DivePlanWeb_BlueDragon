@@ -56,6 +56,5 @@ DivePlanWeb/
 ## Autor DivePlanWeb
 
 - Hronek Jan
-- diplomová práce
 
 *Projekt je nekomercni a open-source. Slouzi k vzdělavacim a vyzkumnym ucelum.*
