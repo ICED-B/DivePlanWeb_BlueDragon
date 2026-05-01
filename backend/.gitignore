@@ -1,0 +1,76 @@
+# Backend (.gitignore) — Flask / Python / Docker
+
+# Secrets / local env
+.env
+.env.*
+.flaskenv
+instance/
+*.pem
+*.key
+
+
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Virtual environments (pokud by někdo spouštěl mimo Docker)
+.venv/
+venv/
+env/
+
+
+# Python build
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+*.whl
+
+
+# Test / coverage / type check / lint caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyre/
+.tox/
+.nox/
+
+
+# Logs
+*.log
+logs/
+log/
+
+
+# Databáze / lokální soubory
+*.sqlite3
+*.db
+
+
+# Uploady / generované soubory (pokud je máš v backendu)
+uploads/
+media/
+
+
+# Alembic / Flask-Migrate
+# Ignorujeme jen cache uvnitř
+migrations/**/__pycache__/
+migrations/**/.pytest_cache/
+
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
+# Docker / compose overrides
+docker-compose.override.yml

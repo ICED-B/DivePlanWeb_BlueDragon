@@ -1,0 +1,22 @@
+{
+  "profile": {
+    "title": "Můj profil",
+    "my_info": "Moje informace",
+    "edit": "Upravit profil",
+    "save": "Uložit změny",
+    "cancel": "Zrušit",
+    "delete_account": "Smazat účet",
+    "delete_confirm": "Opravdu chceš smazat svůj účet? Tato akce je nevratná.",
+    "member_since": "Členem od",
+    "last_updated": "Naposledy upraveno"
+  },
+  "unit_prefs": {
+    "title": "Nastavení jednotek",
+    "depth": "Hloubka",
+    "pressure": "Tlak",
+    "temperature": "Teplota",
+    "volume": "Objem",
+    "save": "Uložit nastavení",
+    "saved": "Nastavení uloženo."
+  }
+}

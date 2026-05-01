@@ -1,0 +1,32 @@
+{
+  "stats": {
+    "user_title": "Moje statistiky",
+    "global_title": "Globální statistiky",
+    "total_dives": "Celkem ponorů",
+    "total_time": "Celkový čas",
+    "max_depth": "Největší hloubka",
+    "avg_depth": "Průměrná hloubka",
+    "avg_duration": "Průměrné trvání",
+    "total_divers": "Počet potápěčů",
+    "loading": "Načítám statistiky...",
+    "error": "Chyba při načítání statistik.",
+    "no_data": "Žádná data k zobrazení.",
+    "tab_overview": "Přehled",
+    "tab_gas": "Plynové směsi",
+    "tab_tanks": "Lahve",
+    "tab_tags": "Štítky",
+    "tab_events": "Události",
+    "tab_circuits": "Dýchací systémy",
+    "tab_licenses": "Certifikace",
+    "tab_countries": "Státy",
+    "tab_regions": "Regiony",
+    "global_subtitle": "Statistiky všech uživatelů aplikace dohromady.",
+    "user_subtitle": "Statistiky pouze z tvých ponorů.",
+    "login_required": "Pro zobrazení statistik se musíš přihlásit.",
+    "top_sites": "Top místa",
+    "top_deep": "Nejhlubší ponory",
+    "recent_dives": "Poslední ponory",
+    "dives_suffix": "ponorů",
+    "unknown": "(neznámá)"
+  }
+}

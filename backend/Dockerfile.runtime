@@ -1,0 +1,23 @@
+# backend/Dockerfile.runtime — production image
+FROM python:3.13-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    FLASK_APP=run:app \
+    FLASK_CONFIG=production
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Make startup script executable
+# Strip Windows CRLF line endings (if built on Windows) and make executable
+RUN sed -i 's/\r//' start.sh && chmod +x start.sh
+
+EXPOSE 8000
+
+# start.sh: runs flask db upgrade (with retry), then gunicorn
+CMD ["./start.sh"]

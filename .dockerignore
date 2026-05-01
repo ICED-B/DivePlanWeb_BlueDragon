@@ -1,0 +1,27 @@
+# .dockerignore — used when building from the project root
+.git
+.gitignore
+*.md
+docs/
+infra/
+
+# Local env files (secrets must NOT enter any image)
+.env
+.env.local
+.env.production.local
+
+# Node
+node_modules/
+frontend/react-app/node_modules/
+frontend/react-app/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+backend/venv/
+backend/.venv/
+
+# Editor
+.vscode/
+.idea/
+*.log

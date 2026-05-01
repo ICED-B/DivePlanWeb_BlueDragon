@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "switzerlandnorth"
+    },
+    "acrName": {
+      "value": "diveplanweb"
+    },
+    "acrResourceGroup": {
+      "value": "rg-diveplanweb"
+    },
+    "acrLoginServer": {
+      "value": "diveplanweb.azurecr.io"
+    },
+    "backendName": {
+      "value": "dpw-backend"
+    },
+    "frontendName": {
+      "value": "dpw-frontend"
+    },
+    "dbServerName": {
+      "value": "dpw-pg-server"
+    },
+    "dbName": {
+      "value": "dpwdb"
+    },
+    "dbAdminUser": {
+      "value": "dpwadmin"
+    },
+    "dbAdminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/rg-diveplanweb/providers/Microsoft.KeyVault/vaults/dpw-kv"
+        },
+        "secretName": "dbAdminPassword"
+      }
+    },
+    "secretKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/rg-diveplanweb/providers/Microsoft.KeyVault/vaults/dpw-kv"
+        },
+        "secretName": "secretKey"
+      }
+    },
+    "jwtSecretKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups/rg-diveplanweb/providers/Microsoft.KeyVault/vaults/dpw-kv"
+        },
+        "secretName": "jwtSecretKey"
+      }
+    }
+  }
+}

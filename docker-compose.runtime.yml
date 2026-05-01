@@ -1,0 +1,62 @@
+# docker-compose.runtime.yml - production
+# Copy .env.production to .env.production.local, fill in secrets, then run:
+#   docker compose -f docker-compose.runtime.yml up --build
+
+services:
+  db:
+    image: postgres:16
+    container_name: dpw_db_runtime
+    env_file:
+      - .env.production.local
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+    networks:
+      - dpw-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.runtime
+    container_name: dpw_backend_runtime
+    env_file:
+      - .env.production.local
+    environment:
+      - FLASK_CONFIG=production
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    networks:
+      - dpw-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.runtime
+    container_name: dpw_frontend_runtime
+    environment:
+      # Points to backend container over the internal Docker network
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    networks:
+      - dpw-net
+
+volumes:
+  postgres-data:
+
+networks:
+  dpw-net:
+    driver: bridge

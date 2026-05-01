@@ -1,0 +1,19 @@
+Cílem diplomové práce je navrhnout, implementovat a otestovat webovou aplikaci sloužící k evidenci, analýze a plánování potápěčských ponorů. 
+
+    Aplikace bude umožňovat:
+
+•	ukládání dat o jednotlivých ponorech,
+•	generování statistik a přehledů o provedených ponorech,
+•	plánování budoucích ponorů,
+•	správu uživatelských účtů s přihlášením a ochranou dat.
+
+Aplikace bude navržena pro běh v cloudovém prostředí (např. MS Azure) s využitím služeb.
+
+    Při zpracování práce se věnovat následujícím oblastem:
+
+•	seznámit se s existujícími řešeními problematiky evidencí ponorů a provést jejich srovnání,
+•	navrhnout architekturu aplikace s ohledem na rozšiřitelnost a bezpečnost,
+•	navrhnout a vytvořit uživatelské rozhraní s důrazem na přehlednost a použitelnost,
+•	zajistit správu uživatelských účtů a bezpečné přihlašování,
+•	otestovat aplikaci z pohledu funkčnosti i uživatelské přívětivosti,
+•	v závěrečné práci popsat celý proces vývoje včetně analýzy, návrhu, implementace, testování a vyhodnocení.

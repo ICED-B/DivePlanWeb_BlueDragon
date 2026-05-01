@@ -1,0 +1,52 @@
+// Konfigurace pro VS Code Dev Container BACKEND
+{
+    "name": "Dive_Plan_Web - Backend (Python/FlaskAPI)", 
+    // Spolecny docker-compose soubor
+    "dockerComposeFile": [
+        "../../docker-compose.yml" // Cesta zpet do korene projektu
+    ],
+    // Služba, ke ktere se pripojujeme pro backend vývoj
+    "service": "backend",
+    "workspaceFolder": "/workspace/backend", // Pracovní adresar v kontejneru
+    // Prizpusobeni VS Code pro backend
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.formatting.provider": "black",
+                "editor.formatOnSave": true,
+                // Nastaveni SQLTools pro pripojeni k DB z backend kontejneru
+                "sqltools.connections": [
+                    {
+                        "name": "Template DB (Docker Backend)",
+                        "driver": "PostgreSQL",
+                        "previewLimit": 50,
+                        "server": "db",
+                        "port": 5432,
+                        "database": "${localEnv:POSTGRES_DB}",
+                        "username": "${localEnv:POSTGRES_USER}"
+                    }
+                ]
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylint",
+                "ms-python.black-formatter",
+                "ms-azuretools.vscode-docker",
+                "mtxr.sqltools",
+                "mtxr.sqltools-driver-pg",
+                "ms-vscode-remote.remote-containers",
+                "visualstudioexptteam.vscodeintellicode",
+                "tamasfe.even-better-toml",
+                "humao.rest-client"
+            ]
+        }
+    },
+    "forwardPorts": [
+        8000
+    ],
+    // "postCreateCommand": "sleep 5 && alembic upgrade head", // Pockame 5s na DB a spustime migrace
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+}

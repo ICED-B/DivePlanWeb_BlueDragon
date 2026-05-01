@@ -1,0 +1,17 @@
+# Node dependencies (installed fresh during build)
+react-app/node_modules/
+
+# Dev build artifacts
+react-app/dist/
+
+# Environment files
+react-app/.env
+react-app/.env.*
+
+# Git
+.git
+.gitignore
+
+# Development / editor files
+*.md
+Dockerfile

@@ -1,0 +1,46 @@
+@baseUrl=http://localhost:5000
+@access_token=PASTE_ACCESS_TOKEN_HERE
+@refresh_token=PASTE_REFRESH_TOKEN_HERE
+
+###
+# Users
+GET {{baseUrl}}/api/v1/users
+
+###
+# Create user
+POST {{baseUrl}}/api/v1/users
+Content-Type: application/json
+
+{
+  "email": "test@email.com",
+  "username": "test",
+  "name": ""
+}
+
+###
+# Login (DOPLŇ SI VLASTNÍ ÚDAJE)
+POST {{baseUrl}}/api/v1/login
+Content-Type: application/json
+
+{
+  "username_or_email": "admin",
+  "password": "CHANGE_ME"
+}
+
+###
+# Refresh token
+POST {{baseUrl}}/api/v1/refresh
+Content-Type: application/json
+Authorization: Bearer {{refresh_token}}
+
+###
+# Logout
+POST {{baseUrl}}/api/v1/logout
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
+
+###
+# Books (secured)
+GET {{baseUrl}}/api/v1/books
+Content-Type: application/json
+Authorization: Bearer {{access_token}}

@@ -1,0 +1,32 @@
+{
+  "stats": {
+    "user_title": "My Statistics",
+    "global_title": "Global Statistics",
+    "total_dives": "Total Dives",
+    "total_time": "Total Time",
+    "max_depth": "Greatest Depth",
+    "avg_depth": "Average Depth",
+    "avg_duration": "Average Duration",
+    "total_divers": "Total Divers",
+    "loading": "Loading statistics...",
+    "error": "Error loading statistics.",
+    "no_data": "No data to display.",
+    "tab_overview": "Overview",
+    "tab_gas": "Gas Mixes",
+    "tab_tanks": "Tanks",
+    "tab_tags": "Tags",
+    "tab_events": "Events",
+    "tab_circuits": "Breathing Systems",
+    "tab_licenses": "Certifications",
+    "tab_countries": "Countries",
+    "tab_regions": "Regions",
+    "global_subtitle": "Statistics from all users combined.",
+    "user_subtitle": "Statistics from your own dives only.",
+    "login_required": "You must be logged in to view statistics.",
+    "top_sites": "Top Sites",
+    "top_deep": "Deepest Dives",
+    "recent_dives": "Recent Dives",
+    "dives_suffix": "dives",
+    "unknown": "(unknown)"
+  }
+}

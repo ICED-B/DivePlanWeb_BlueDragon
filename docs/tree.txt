@@ -1,0 +1,380 @@
+│   .dockerignore
+│   .env
+│   .env.production
+│   .gitignore
+│   docker-compose.runtime.yml
+│   docker-compose.yml
+│   README.md
+│   
+├───.devcontainer
+│   ├───backend
+│   │       devcontainer.json
+│   │       
+│   └───frontend
+│           devcontainer.json
+│           
+├───backend
+│   │   .dockerignore
+│   │   .gitignore
+│   │   DivePlanWeb DB.session.sql
+│   │   Dockerfile
+│   │   Dockerfile.runtime
+│   │   example.http
+│   │   requirements.txt
+│   │   run.py
+│   │   start.sh
+│   │   
+│   ├───.vscode
+│   │       settings.json
+│   │       
+│   ├───app
+│   │   │   auth.py
+│   │   │   config.py
+│   │   │   db.py
+│   │   │   extensions.py
+│   │   │   __init__.py
+│   │   │   
+│   │   ├───api
+│   │   │   │   __init__.py
+│   │   │   │   
+│   │   │   └───routes
+│   │   │       │   app_users_routes.py
+│   │   │       │   audit_logs_routes.py
+│   │   │       │   buddies_routes.py
+│   │   │       │   devices_routes.py
+│   │   │       │   diver_profile_routes.py
+│   │   │       │   dives_routes.py
+│   │   │       │   dive_attachments_routes.py
+│   │   │       │   dive_buddies_routes.py
+│   │   │       │   dive_equipment_routes.py
+│   │   │       │   dive_events_routes.py
+│   │   │       │   dive_segments_routes.py
+│   │   │       │   dive_tags_routes.py
+│   │   │       │   dive_tanks_routes.py
+│   │   │       │   equipment_items_routes.py
+│   │   │       │   equipment_services_routes.py
+│   │   │       │   etl_exports_routes.py
+│   │   │       │   etl_imports_routes.py
+│   │   │       │   export_routes.py
+│   │   │       │   exposure_metrics_routes.py
+│   │   │       │   gas_mixes_routes.py
+│   │   │       │   license_routes.py
+│   │   │       │   media_routes.py
+│   │   │       │   profile_samples_routes.py
+│   │   │       │   sites_routes.py
+│   │   │       │   stats_routes.py
+│   │   │       │   tags_routes.py
+│   │   │       │   tanks_routes.py
+│   │   │       │   token_blacklist_routes.py
+│   │   │       │   trips_routes.py
+│   │   │       │   unit_prefs_routes.py
+│   │   │       │   user_stats_routes.py
+│   │   │       │   __init__.py
+│   │   │       │   
+│   │   │       └───planner
+│   │   │               calculators_routes.py
+│   │   │               planner_routes.py
+│   │   │               __init__.py
+│   │   │               
+│   │   ├───models
+│   │   │       app_user.py
+│   │   │       audit_log.py
+│   │   │       buddy.py
+│   │   │       device.py
+│   │   │       dive.py
+│   │   │       diver_profile.py
+│   │   │       dive_attachment.py
+│   │   │       dive_buddy.py
+│   │   │       dive_equipment.py
+│   │   │       dive_event.py
+│   │   │       dive_segment.py
+│   │   │       dive_tag.py
+│   │   │       dive_tank.py
+│   │   │       equipment_item.py
+│   │   │       equipment_service.py
+│   │   │       etl_export.py
+│   │   │       etl_import.py
+│   │   │       exposure_metrics.py
+│   │   │       gas_mix.py
+│   │   │       license.py
+│   │   │       media.py
+│   │   │       profile_sample.py
+│   │   │       site.py
+│   │   │       tag.py
+│   │   │       tank.py
+│   │   │       token_blacklist.py
+│   │   │       trip.py
+│   │   │       unit_prefs.py
+│   │   │       user_stats.py
+│   │   │       __init__.py
+│   │   │       
+│   │   ├───planner
+│   │   │   │   planner_plan.py
+│   │   │   │   __init__.py
+│   │   │   │   
+│   │   │   ├───calculators
+│   │   │   │       best_mix.py
+│   │   │   │       cns.py
+│   │   │   │       consumed_gas.py
+│   │   │   │       dive_time.py
+│   │   │   │       ead.py
+│   │   │   │       end.py
+│   │   │   │       gas_blender.py
+│   │   │   │       gas_properties.py
+│   │   │   │       gas_reserves.py
+│   │   │   │       mod.py
+│   │   │   │       ndl_table.py
+│   │   │   │       nitrox.py
+│   │   │   │       otu.py
+│   │   │   │       ppo2.py
+│   │   │   │       required_gas.py
+│   │   │   │       sac_rmv.py
+│   │   │   │       tank_gas_content.py
+│   │   │   │       validators.py
+│   │   │   │       __init__.py
+│   │   │   │       
+│   │   │   ├───core
+│   │   │   │       deco_tables.py
+│   │   │   │       types.py
+│   │   │   │       __init__.py
+│   │   │   │       
+│   │   │   └───deco_tables
+│   │   │           air.py
+│   │   │           ean32.py
+│   │   │           ean34.py
+│   │   │           ean36.py
+│   │   │           ean38.py
+│   │   │           ean40.py
+│   │   │           
+│   │   ├───schemas
+│   │   │       app_user_schema.py
+│   │   │       audit_log_schema.py
+│   │   │       buddy_schema.py
+│   │   │       device_schema.py
+│   │   │       diver_profile_schema.py
+│   │   │       dive_attachment_schema.py
+│   │   │       dive_buddy_schema.py
+│   │   │       dive_detail_schema.py
+│   │   │       dive_equipment_schema.py
+│   │   │       dive_event_schema.py
+│   │   │       dive_schema.py
+│   │   │       dive_segment_schema.py
+│   │   │       dive_tag_schema.py
+│   │   │       dive_tank_schema.py
+│   │   │       equipment_item_schema.py
+│   │   │       equipment_service_schema.py
+│   │   │       etl_export_schema.py
+│   │   │       etl_import_schema.py
+│   │   │       exposure_metrics_schema.py
+│   │   │       gas_mix_schema.py
+│   │   │       license_schema.py
+│   │   │       media_schema.py
+│   │   │       profile_sample_schema.py
+│   │   │       site_schema.py
+│   │   │       tag_schema.py
+│   │   │       tank_schema.py
+│   │   │       token_blacklist_schema.py
+│   │   │       trip_schema.py
+│   │   │       unit_prefs_schema.py
+│   │   │       user_stats_schema.py
+│   │   │       __init__.py
+│   │   │       
+│   │   ├───services
+│   │   │       audit_events.py
+│   │   │       audit_log_service.py
+│   │   │       auth_service.py
+│   │   │       export_service.py
+│   │   │       extended_stats_service.py
+│   │   │       gas_service.py
+│   │   │       stats_service.py
+│   │   │       unit_prefs_service.py
+│   │   │       __init__.py
+│   │   │       
+│   │   └───utils
+│   │           enums.py
+│   │           i18n.py
+│   │           jwt.py
+│   │           password.py
+│   │           units.py
+│   │           
+│   ├───migrations
+│   │   │   alembic.ini
+│   │   │   env.py
+│   │   │   README
+│   │   │   script.py.mako
+│   │   │   
+│   │   └───versions
+│   │           c6035ee33b5d_initial_schema.py
+│   │           
+│   └───tests
+│           test_planner.py
+│           
+├───docs
+│   │   azure_pull_steps.md
+│   │   lokalni_spusteni.md
+│   │   zadani.txt
+│   │   
+│   ├───privacy_policy
+│   │       privacy_policy_cz.md
+│   │       privacy_policy_en.md
+│   │       
+│   └───terms_of_use
+│           terms_of_use_cz.md
+│           terms_of_use_en.md
+│           
+├───frontend
+│   │   .dockerignore
+│   │   .gitignore
+│   │   docker-entrypoint.sh
+│   │   Dockerfile
+│   │   Dockerfile.runtime
+│   │   nginx.conf.template
+│   │   
+│   └───react-app
+│       │   .gitignore
+│       │   eslint.config.js
+│       │   index.html
+│       │   package-lock.json
+│       │   package.json
+│       │   postcss.config.cjs
+│       │   tailwind.config.js
+│       │   tsconfig.app.json
+│       │   tsconfig.json
+│       │   tsconfig.node.json
+│       │   vite.config.ts
+│       │   
+│       ├───public
+│       │   │   blue_dragon.svg
+│       │   │   blue_dragon_2.svg
+│       │   │   blue_dragon_outline.svg
+│       │   │   vite.svg
+│       │   │   
+│       │   └───locales
+│       │       ├───cs
+│       │       │       admin.json
+│       │       │       data.json
+│       │       │       home.json
+│       │       │       planner.json
+│       │       │       profile.json
+│       │       │       stats.json
+│       │       │       translation.json
+│       │       │       
+│       │       ├───de
+│       │       │       translation.json
+│       │       │       
+│       │       ├───en
+│       │       │       admin.json
+│       │       │       data.json
+│       │       │       home.json
+│       │       │       planner.json
+│       │       │       profile.json
+│       │       │       stats.json
+│       │       │       translation.json
+│       │       │       
+│       │       ├───fr
+│       │       │       translation.json
+│       │       │       
+│       │       ├───pl
+│       │       │       translation.json
+│       │       │       
+│       │       ├───ru
+│       │       │       translation.json
+│       │       │       
+│       │       └───uk
+│       │               translation.json
+│       │               
+│       └───src
+│           │   App.css
+│           │   App.tsx
+│           │   i18n.ts
+│           │   index.css
+│           │   main.tsx
+│           │   vite-env.d.ts
+│           │   
+│           ├───assets
+│           │       react.svg
+│           │       
+│           ├───components
+│           │   │   Layout.tsx
+│           │   │   Navbar.tsx
+│           │   │   ProtectedRoute.tsx
+│           │   │   
+│           │   └───ui
+│           │           badge.tsx
+│           │           button.tsx
+│           │           card.tsx
+│           │           dialog.tsx
+│           │           dropdown.tsx
+│           │           input.tsx
+│           │           table.tsx
+│           │           tabs.tsx
+│           │           
+│           ├───contexts
+│           │       AuthContext.tsx
+│           │       ThemeContext.tsx
+│           │       
+│           ├───lib
+│           │       api.ts
+│           │       utils.ts
+│           │       
+│           └───pages
+│               │   HomePage.tsx
+│               │   LoginPage.tsx
+│               │   NotFoundPage.tsx
+│               │   RegisterPage.tsx
+│               │   
+│               ├───admin
+│               │       AdminAuditPage.tsx
+│               │       AdminBlacklistPage.tsx
+│               │       AdminUsersPage.tsx
+│               │       
+│               ├───buddies
+│               │       BuddiesPage.tsx
+│               │       
+│               ├───devices
+│               │       DevicesPage.tsx
+│               │       
+│               ├───dives
+│               │       DiveDetailPage.tsx
+│               │       DivesPage.tsx
+│               │       
+│               ├───equipment
+│               │       EquipmentPage.tsx
+│               │       EquipmentServicesPage.tsx
+│               │       
+│               ├───gas
+│               │       GasPage.tsx
+│               │       
+│               ├───legal
+│               │       PrivacyPage.tsx
+│               │       TermsPage.tsx
+│               │       
+│               ├───licenses
+│               │       LicensesPage.tsx
+│               │       
+│               ├───planner
+│               │       BigPlannerPage.tsx
+│               │       CalculatorsPage.tsx
+│               │       
+│               ├───profile
+│               │       ChangePasswordPage.tsx
+│               │       ProfilePage.tsx
+│               │       UnitPrefsPage.tsx
+│               │       
+│               ├───sites
+│               │       SitesPage.tsx
+│               │       
+│               ├───stats
+│               │       GlobalStatsPage.tsx
+│               │       UserStatsPage.tsx
+│               │       
+│               ├───tags
+│               │       TagsPage.tsx
+│               │       
+│               └───trips
+│                       TripsPage.tsx
+│                       
+└───infra
+        main.json
+        parameters.json
+     

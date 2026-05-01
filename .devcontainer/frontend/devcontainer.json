@@ -1,0 +1,25 @@
+// Konfigurace pro VS Code Dev Container FRONTEND
+{
+    "name": "Dive_Plan_Web - Frontend (Node.js/React)",
+    // Spolecny docker-compose soubor
+    "dockerComposeFile": [
+        "../../docker-compose.yml" // Cesta zpet do korene projektu
+    ],
+    // Sluzba, ke ktere se pripojujeme pro vyvoj
+    "service": "frontend",
+    "workspaceFolder": "/workspace/frontend", // Pracovni adresar v kontejneru
+    // Prizpusobeni VS Code
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "humao.rest-client",
+                "ritwickdey.LiveServer"
+            ]
+        }
+    },
+    "forwardPorts": [
+        5173
+    ],
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+}

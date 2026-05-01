@@ -1,0 +1,37 @@
+# frontend/Dockerfile.runtime production image (nginx with API proxy)
+# Build context: ./frontend  (react app lives in react-app/ subdirectory)
+
+# Build
+FROM node:22-alpine AS build
+
+WORKDIR /app
+
+# Copy package files from the react-app subdirectory
+COPY react-app/package*.json ./
+
+RUN npm install
+
+# Copy source code
+COPY react-app/ .
+
+# Build Vite project
+RUN npm run build
+
+
+# Runtime(nginx)
+FROM nginx:alpine
+
+# Copy built static files
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Copy nginx config template (BACKEND_URL injected at container startup)
+COPY nginx.conf.template /etc/nginx/templates/nginx.conf.template
+
+# Copy and enable the startup entrypoint
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+# Strip Windows CRLF line endings (if built on Windows) and make executable
+RUN sed -i 's/\r//' /docker-entrypoint.sh && chmod +x /docker-entrypoint.sh
+
+EXPOSE 80
+
+ENTRYPOINT ["/docker-entrypoint.sh"]

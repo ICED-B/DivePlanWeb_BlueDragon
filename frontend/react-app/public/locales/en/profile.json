@@ -1,0 +1,22 @@
+{
+  "profile": {
+    "title": "My Profile",
+    "my_info": "My Information",
+    "edit": "Edit Profile",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "delete_account": "Delete Account",
+    "delete_confirm": "Are you sure you want to delete your account? This action is irreversible.",
+    "member_since": "Member since",
+    "last_updated": "Last updated"
+  },
+  "unit_prefs": {
+    "title": "Unit Preferences",
+    "depth": "Depth",
+    "pressure": "Pressure",
+    "temperature": "Temperature",
+    "volume": "Volume",
+    "save": "Save Settings",
+    "saved": "Settings saved."
+  }
+}
