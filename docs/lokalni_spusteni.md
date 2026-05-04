@@ -1,5 +1,4 @@
 # DivePlanWeb — Lokální spuštění
-Postup pro spuštění lokální verze projektu.
 
 ## Požadavky
 | Nástroj | Účel |
