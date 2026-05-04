@@ -1,6 +1,7 @@
 # Secret / local environment files — NEVER commit these
 .env
 .env.local
+.env.production
 .env.production.local
 .env.*.local
 
